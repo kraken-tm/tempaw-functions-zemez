@@ -6,5 +6,6 @@ module.exports = {
 	buildUserPackage: require( './presets/build-user-package' ),
 	buildMonster:     require( './presets/build-monster' ),
 	buildForest:      require( './presets/build-forest' ),
-	updBs4:           require( './presets/update-to-bs4' )
+	updBs4:           require( './presets/update-to-bs4' ),
+	updBs5:           require( './presets/update-to-bs5' )
 };
