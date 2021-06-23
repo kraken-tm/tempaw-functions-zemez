@@ -7,8 +7,6 @@ const
 	path         = require( 'path' ),
 	pug          = require( 'gulp-pug' ),
 	sass         = require( 'gulp-sass' ),
-	jade         = require( 'gulp-jade' ),
-	less         = require( 'gulp-less' ),
 	babel        = require( 'gulp-babel' ),
 	gutil        = require( 'gulp-util' ),
 	del          = require( 'del' ),
@@ -251,37 +249,6 @@ action.sass = function ( data ) {
 	return data;
 };
 
-action.less = function ( data ) {
-	if ( !data || !data.src || !data.dest ) throw Error( 'Required parameter of "less" not specified (src, dest)' );
-
-	data.execute = function () {
-		if ( data.callback ) data.callback();
-		gutil.log( 'Compile LESS:', gutil.colors.magenta( data.src ), '>>', gutil.colors.magenta( data.dest ) );
-		return gulp.src( data.src, data.opts )
-			.pipe( less( global.config.less.options ) )
-			.pipe( gulpIf( global.config.autoprefixer.enable, autoprefixer( global.config.autoprefixer.options ) ) )
-			.pipe( gulp.dest( data.dest ) );
-	};
-
-	data.execute.displayName = data.task || 'Less';
-	return data;
-};
-
-action.jade = function ( data ) {
-	if ( !data || !data.src || !data.dest ) throw Error( 'Required parameter of "jade" not specified (src, dest)' );
-
-	data.execute = function () {
-		if ( data.callback ) data.callback();
-		gutil.log( 'Compile JADE:', gutil.colors.magenta( data.src ), '>>', gutil.colors.magenta( data.dest ) );
-		return gulp.src( data.src, data.opts )
-			.pipe( jade( global.config.jade.options ) )
-			.pipe( gulp.dest( data.dest ) );
-	};
-
-	data.execute.displayName = data.task || 'Jade';
-	return data;
-};
-
 action.minifyJs = function ( data ) {
 	if ( !data || !data.src || !data.dest ) throw Error( 'Required parameter of "minifyJs" not specified (src, dest)' );
 
@@ -294,7 +261,7 @@ action.minifyJs = function ( data ) {
 			.pipe( gulp.dest( data.dest ) );
 	};
 
-	data.execute.displayName = data.task || 'Jade';
+	data.execute.displayName = data.task || 'JS';
 	return data;
 };
 

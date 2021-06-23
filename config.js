@@ -32,13 +32,6 @@ module.exports = {
 			linefeed: 'cr'
 		}
 	},
-	less: {
-		enable: false,
-		showTask: false,
-		watch: 'dev/less/**/*.less',
-		source: 'dev/less/style.less',
-		dest: 'dev/css/'
-	},
 	pug: {
 		enable: true,
 		showTask: false,
@@ -49,16 +42,6 @@ module.exports = {
 			pretty: true,
 			verbose: true,
 			emitty: true
-		}
-	},
-	jade: {
-		enable: false,
-		showTask: false,
-		watch: 'dev/jade/**/*.jade',
-		source: 'dev/jade/pages/!(_)*.jade',
-		dest: 'dev/',
-		options: {
-			pretty: true
 		}
 	},
 	babel: {
@@ -94,16 +77,6 @@ module.exports = {
 		pug: 'dev/pug/**/*.pug',
 		js: 'dev/js/**/!(*.min).js',
 		html: 'dev/**/*.html'
-	},
-	jadeToPug: {
-		showTask: false,
-		source: 'dev/jade/**/*.jade',
-		dest: 'dev/pug/'
-	},
-	lessToScss: {
-		showTask: false,
-		source: 'dev/less/**/*.less',
-		dest: 'dev/scss/'
 	},
 	cache: {
 		showTask: true,

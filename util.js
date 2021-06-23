@@ -60,13 +60,7 @@ Util.defaultErrorHandler = function ( error ) {
 			'\rAt: '+ error.line +':'+ error.column +
 			'\rFile: '+ error.relativePath;
 		console.error( errTitle +'\n'+ error.messageOriginal + '\nAt: '+ error.line +':'+ error.column +'\nFile: '+ error.relativePath );
-	} else if ( error.plugin === 'gulp-less' ) {
-		errMessage =
-			error.message +
-			'\rAt: '+ error.line +':'+ error.column +
-			'\rFile: '+ error.fileName;
-		console.error( errTitle +'\n'+ error.message + '\nAt: '+ error.line +':'+ error.column +'\nFile: '+ error.fileName );
-	} else if( error.plugin === 'gulp-pug' || error.plugin === 'gulp-jade' ) {
+	} else if( error.plugin === 'gulp-pug' ) {
 		errMessage =
 			( error.msg ? error.msg : error.name ) +
 			( ( error.line && error.column ) ? ('\rAt: '+ error.line +':'+ error.column) : '' ) +
