@@ -29,7 +29,6 @@ module.exports = function ( configPath ) {
 		}
 
 		if( global.config.sass && global.config.sass.enable ) gulp.watch( [ configPath, global.config.sass.watch ],  task.sass );
-		if( global.config.babel && global.config.babel.enable ) gulp.watch( [ configPath, global.config.babel.watch ], task.babel );
 		if( global.config.pug && global.config.pug.enable ) gulp.watch( [ configPath, global.config.pug.watch ],   task.pug ).on('all', ( event, filepath ) => {
 			global.emittyChangedFile = filepath;
 		});

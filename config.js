@@ -23,7 +23,7 @@ module.exports = {
 		enable: true,
 		showTask: false,
 		watch: `dev/scss/**/*.scss`,
-		source: `dev/scss/custom-styles/!(_)style.scss`,
+		source: `dev/scss/custom/!(_)style.scss`,
 		dest: 'dev/css/',
 		options: {
 			outputStyle: 'expanded',
@@ -42,22 +42,6 @@ module.exports = {
 			pretty: true,
 			verbose: true,
 			emitty: true
-		}
-	},
-	babel: {
-		enable: false,
-		watch: 'dev/babel/**/!(_)*.js',
-		source: 'dev/babel/!(_)*.js',
-		dest: 'dev/js/',
-		options: {
-			presets: ['env'],
-			comments: false,
-			compact: true,
-			minified: true,
-			sourceType: 'script'
-		},
-		alternate: {
-			sourcemaps: false
 		}
 	},
 	autoprefixer: {

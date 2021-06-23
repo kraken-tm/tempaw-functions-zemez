@@ -66,9 +66,6 @@ Util.defaultErrorHandler = function ( error ) {
 			( ( error.line && error.column ) ? ('\rAt: '+ error.line +':'+ error.column) : '' ) +
 			( error.filename ? ('\rFile: '+ error.filename) : ('\rFile: '+ error.path) );
 		console.error( errTitle +'\n'+ error.message );
-	} else if( error.plugin === 'gulp-babel' ) {
-		errMessage = error.message;
-		console.error( errTitle +'\n'+ errMessage );
 	} else {
 		errMessage = JSON.stringify( error, '', 2 );
 		console.error( errTitle +'\n'+ errMessage );

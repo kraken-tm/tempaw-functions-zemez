@@ -5,7 +5,6 @@ const
 	plumber       = require( 'gulp-plumber' ),
 	sass          = require( 'gulp-sass' ),
 	pug           = require( 'gulp-pug' ),
-	babel         = require( 'gulp-babel' ),
 	sourcemaps    = require( 'gulp-sourcemaps' ),
 	autoprefixer  = require( 'gulp-autoprefixer' ),
 	emitty        = require( 'emitty' ).setup( 'dev', 'pug' ), // Hardcode
@@ -80,19 +79,6 @@ module.exports = {
 			if ( global.config.pug.options.emitty ) emitty.scan( global.emittyChangedFile ).then( main );
 			else main();
 		});
-	},
-
-	babel() {
-		let fail = false, startTime = process.hrtime(), util = require( './util.js' );
-		return gulp.src( global.config.babel.source )
-			.pipe( plumber({ errorHandler: util.defaultErrorHandler }) )
-			.pipe( babel( global.config.babel.options ) )
-			.on( 'error', function() { fail = true } )
-			.pipe( gulp.dest( global.config.babel.dest ) )
-			.on( 'end', function() { if( !fail ) {
-				browserSync.reload();
-				notifier.notify({ title: 'JS', message: `Successfully compiled!\r${ util.runtime( startTime ) }`, time: 3000 });
-			}})
 	},
 
 	validateHtml() {

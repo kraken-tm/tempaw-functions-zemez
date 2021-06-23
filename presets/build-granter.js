@@ -102,8 +102,8 @@ module.exports = function( data ) {
 					}
 				}),
 				action.transformContent({
-					src: `${data.dest.sources}/scss/custom-styles/!(_)*.scss`,
-					dest: `${data.dest.sources}/scss/custom-styles/`,
+					src: `${data.dest.sources}/scss/custom/!(_)*.scss`,
+					dest: `${data.dest.sources}/scss/custom/`,
 					callback( content ) {
 						return content.replace(/@import\s*["']plugins\/layout-panel["'];\s*/, '');
 					}
@@ -111,7 +111,7 @@ module.exports = function( data ) {
 				action.clean({
 					src: [
 						`${data.dest.sources}/pug/includes/_layout-panel.pug`,
-						`${data.dest.sources}/scss/custom-styles/plugins/_layout-panel.scss`
+						`${data.dest.sources}/scss/custom/plugins/_layout-panel.scss`
 					]
 				})
 			]);

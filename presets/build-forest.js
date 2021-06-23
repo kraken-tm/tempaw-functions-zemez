@@ -13,7 +13,7 @@ module.exports = function( data ) {
 
 		// Генерация Table of contents
 		ruleSet = ruleSet.concat([
-			action.genTOC({ css: 'dev/css/style.css', scss: 'dev/scss/custom-styles/style.scss' })
+			action.genTOC({ css: 'dev/css/style.css', scss: 'dev/scss/custom/style.scss' })
 		]);
 
 		// Очистка дистрибутива

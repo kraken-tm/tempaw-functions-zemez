@@ -7,7 +7,6 @@ const
 	path         = require( 'path' ),
 	pug          = require( 'gulp-pug' ),
 	sass         = require( 'gulp-sass' ),
-	babel        = require( 'gulp-babel' ),
 	gutil        = require( 'gulp-util' ),
 	del          = require( 'del' ),
 	mkdirp       = require( 'mkdirp' ),
@@ -100,7 +99,7 @@ action.minifyimg = function ( data ) {
 		return gulp.src( data.src, data.opts )
 			.pipe( cache( imagemin([
 				imagemin.gifsicle({ interlaced: true }),
-				imagemin.jpegtran({ progressive: true }),
+				imagemin.mozjpeg({ progressive: true }),
 				imagemin.optipng({ optimizationLevel: 5 })
 			], { verbose: true }) ) )
 			.pipe( gulp.dest( data.dest ) );
@@ -256,7 +255,6 @@ action.minifyJs = function ( data ) {
 		if ( data.callback ) data.callback();
 		gutil.log( 'Minify JS:', gutil.colors.magenta( data.src ), '>>', gutil.colors.magenta( data.dest ) );
 		return gulp.src( data.src, data.opts )
-			.pipe( babel( { presets: ['env'], comments: false, compact: true, minified: true, sourceType: 'script' } ) )
 			.pipe( rename({ suffix: '.min' }) )
 			.pipe( gulp.dest( data.dest ) );
 	};
