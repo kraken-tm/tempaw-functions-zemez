@@ -50,11 +50,11 @@ module.exports = function (data) {
 					.replace(/\.embed-responsive/g, '.ratio')
 
 					// Modal & Tooltip & Popover
-					.replace(/\.data-toggle/g, '.data-bs-toggle')
-					.replace(/\.data-target/g, '.data-bs-target')
-					.replace(/\.data-dismiss/g, '.data-bs-dismiss')
-					.replace(/\.data-placement/g, '.data-bs-placement')
-					.replace(/\.data-original-title/g, '.data-bs-original-title')
+					.replace(/data-toggle/g, 'data-bs-toggle')
+					.replace(/data-target/g, 'data-bs-target')
+					.replace(/data-dismiss/g, 'data-bs-dismiss')
+					.replace(/data-placement/g, 'data-bs-placement')
+					.replace(/data-original-title/g, 'data-bs-original-title')
 				}
 			}),
 
