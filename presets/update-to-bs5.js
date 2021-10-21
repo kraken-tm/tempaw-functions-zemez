@@ -80,20 +80,20 @@ module.exports = function (data) {
 					.replace(/\.embed-responsive/g, '.ratio')
 
 					// Screen reader
-					.replace(/\.sr-only/g, '.visually-hidden')
+					.replace(/sr-only/g, 'visually-hidden')
 
 					// Breakpoints
-					.replace(/\.media-breakpoint-down\(xl\)/g, '.media-breakpoint-down(xxl)')
-					.replace(/\.media-breakpoint-down\(lg\)/g, '.media-breakpoint-down(xl)')
-					.replace(/\.media-breakpoint-down\(md\)/g, '.media-breakpoint-down(lg)')
-					.replace(/\.media-breakpoint-down\(sm\)/g, '.media-breakpoint-down(md)')
-					.replace(/\.media-breakpoint-down\(xs\)/g, '.media-breakpoint-down(sm)')
+					.replace(/media-breakpoint-down\(xl\)/g, 'media-breakpoint-down(xxl)')
+					.replace(/media-breakpoint-down\(lg\)/g, 'media-breakpoint-down(xl)')
+					.replace(/media-breakpoint-down\(md\)/g, 'media-breakpoint-down(lg)')
+					.replace(/media-breakpoint-down\(sm\)/g, 'media-breakpoint-down(md)')
+					.replace(/media-breakpoint-down\(xs\)/g, 'media-breakpoint-down(sm)')
 
-					.replace(/\.media-breakpoint-between\(xl, xl\)/g, '.media-breakpoint-between(xl, xxl)')
-					.replace(/\.media-breakpoint-between\(lg, lg\)/g, '.media-breakpoint-between(lg, xl)')
-					.replace(/\.media-breakpoint-between\(md, md\)/g, '.media-breakpoint-between(md, lg)')
-					.replace(/\.media-breakpoint-between\(sm, sm\)/g, '.media-breakpoint-between(sm, md)')
-					.replace(/\.media-breakpoint-between\(xs, xs\)/g, '.media-breakpoint-between(xs, sm)')
+					.replace(/media-breakpoint-between\(xl, xl\)/g, 'media-breakpoint-between(xl, xxl)')
+					.replace(/media-breakpoint-between\(lg, lg\)/g, 'media-breakpoint-between(lg, xl)')
+					.replace(/media-breakpoint-between\(md, md\)/g, 'media-breakpoint-between(md, lg)')
+					.replace(/media-breakpoint-between\(sm, sm\)/g, 'media-breakpoint-between(sm, md)')
+					.replace(/media-breakpoint-between\(xs, xs\)/g, 'media-breakpoint-between(xs, sm)')
 				}
 			}),
 
