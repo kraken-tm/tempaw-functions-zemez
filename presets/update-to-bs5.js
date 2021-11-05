@@ -72,8 +72,8 @@ module.exports = function (data) {
 					// Text
 					.replace(/\.font-weight-(.*)/g, '.fw-$1')
 					.replace(/\.font-style-(.*)/g, '.fst-$1')
-					.replace(/\.font-italic(.)/g, '.fst-italic')
-					.replace(/\.text-monospace(.)/g, '.font-monospace')
+					.replace(/\.font-italic/g, '.fst-italic')
+					.replace(/\.text-monospace/g, '.font-monospace')
 
 					// Ratios
 					.replace(/\.embed-responsive-(\d+)by(\d+)/g, '.ratio-$1x$2')
